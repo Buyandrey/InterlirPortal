@@ -40,7 +40,7 @@ class BusinessAccountPageLocators:
     companyNumberField = "(//div/div/input)[7]"
     vatNumberField = "(//div/div/input)[8]"
     websiteField = "(//div/div/input)[9]"
-    adressLineField = "(//div/div/input)[10]"
+    addressLineField = "(//div/div/input)[10]"
     zipPostalCodeField = "(//div/div/input)[11]"
     stateField = "(//div/div/input)[12]"
     cityDistrictField = "(//div/div/input)[13]"

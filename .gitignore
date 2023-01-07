@@ -1,1 +1,4 @@
 /_Tests/.pytest_cache/
+/_Tests/chromedriver
+/drivers/
+/reports/
