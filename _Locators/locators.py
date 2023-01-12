@@ -25,6 +25,12 @@ class HomePageLocators:
 
 
 class BusinessAccountPageLocators:
+    """
+    1 нажать на селектор БА (
+    2 нажать на ' Add new business account '
+
+
+    """
     startRegistrationOrganization = "//div/div/button[@type='button']"
     firstNameField = "(//div/div/input)[2]"
     lastNameField = "(//div/div/input)[3]"""

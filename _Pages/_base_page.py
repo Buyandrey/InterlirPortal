@@ -1,9 +1,12 @@
 import HtmlTestRunner
 import unittest
+
+from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
+from _Locators.locators import LoginPageLocators as lpl
 
 EXPLICIT_WAIT_TIME = 3
 
@@ -11,6 +14,16 @@ EXPLICIT_WAIT_TIME = 3
 class BasePage(unittest.TestCase):
     web_element = WebElement
     web_driver_wait = WebDriverWait
+    web_driver = webdriver
+
+    def __init__(self, driver):
+        self.web_driver = driver
+
+    def open(self, url):
+        self.web_driver.get(url)
+        return self
+
+
 
     def waitElementVisible(self, element):
         """
@@ -35,7 +48,3 @@ class BasePage(unittest.TestCase):
         element = self.find_by_xpath(element_xpath)
         self.waitElementVisible(element).clear()
         self.waitElementVisible(element).send_keys(value)
-
-
-if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output="/home/bans/Projects/Python/Selenium/reports"))

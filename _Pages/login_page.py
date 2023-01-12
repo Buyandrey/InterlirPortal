@@ -6,6 +6,7 @@ class LoginPage(BasePage):
 
     def __init__(self, driver):
         # For possibility of search and interact with web page
+        super().__init__(driver)
         self.driver = driver
         ''' List of web elements which can be used during autotests of login page:
         ========================================================================='''
@@ -17,6 +18,10 @@ class LoginPage(BasePage):
 
     ''' Methods which can be used during autotests of login page:
     ======================================================================================'''
+
+    def login_as(self, email, password):
+        self.setEmail(email).setPassword(password).click_on(self.authorization_button_xpath)
+        return self
     def setEmail(self, value):
         self.set_value(self.email_textfield_xpath, value)
         return self
